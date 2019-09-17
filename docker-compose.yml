@@ -1,20 +1,16 @@
-version: '2.2'
+# OPAL data
+#
+# Configuration is described in the subfolders.
+
+version: '3'
+
 services:
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.3.2
-    ports:
-      - "9200:9200"
-      - "9300:9300"
+  opal-fuseki:
+    container_name: opal-fuseki
     environment:
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-      - discovery.type=single-node
-  elasticsearch-mapping-init:
-    build: elasticsearch-mapping-init
-    links:
-      - elasticsearch
-    depends_on:
-      - elasticsearch
-networks:
-  default:
-    external:
-      name: opalnetwork
+      - JVM_ARGS=-Xmx2g
+      - ADMIN_PASSWORD=opalfuseki
+    ports:
+      - 3030:3030
+    build:
+      fuseki/

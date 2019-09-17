@@ -1,0 +1,33 @@
+# OPAL Fuseki
+#
+# Configuration of the used Dockerfiles is described here:
+#  https://hub.docker.com/r/stain/jena-fuseki
+# Configuration example:
+#  https://github.com/NatLibFi/Skosmos/blob/master/docker-compose.yml
+
+version: '3'
+#version: '3.7'
+
+#services:
+#  opal-fuseki-data:
+#    - volumes:
+
+  opal-fuseki:
+    environment:
+      - JVM_ARGS=-Xmx2g
+      - ADMIN_PASSWORD=${FUSEKI_ADMIN_PASSWORD}
+    ports:
+      - 3030:3030
+    build:
+      ./
+#    volumes:
+#      - type: volume
+#        source: /tmp/fusekidata
+#        target: /fuseki
+
+#volumes:
+#  $PWD/tmp/fusekidata:
+
+#docker run --name fuseki-data -v /fuseki busybox
+#docker run -d -p 3030:3030 -it -e ADMIN_PASSWORD=${FUSEKI_ADMIN_PASSWORD} --name=fuseki --volumes-from fuseki-data  stain/jena-fuseki
+
