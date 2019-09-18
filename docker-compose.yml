@@ -2,7 +2,6 @@
 #
 # Configurations are described in the subfolders.
 
-# version 3.2 is needed for extended notation syntax
 version: '3.2'
 
 services:
@@ -35,13 +34,12 @@ services:
 
   opal-fuseki:
     environment:
-# Password is set in file '.env'
       - ADMIN_PASSWORD=${FUSEKI_ADMIN_PASSWORD}
-      - JVM_ARGS=-Xmx2g
+      - JVM_ARGS=${FUSEKI_JVM_ARGS}
     ports:
       - 3030:3030
     build:
-      fuseki/
+      ./
     volumes:
       - fuseki-data
 
