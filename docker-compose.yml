@@ -1,11 +1,30 @@
 # OPAL data
 #
-# Configuration is described in the subfolders.
+# Configurations are described in the subfolders.
 
 # version 3.2 is needed for extended notation syntax
 version: '3.2'
 
 services:
+
+### Elasticsearch
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.4.3
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+  elasticsearch-mapping-init:
+    build: elasticsearch/
+    links:
+      - elasticsearch
+    depends_on:
+      - elasticsearch
+
+### Fuseki
 
   opal-fuseki-data:
     image: "busybox"
