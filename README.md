@@ -31,7 +31,7 @@ Setup file(s) for OPAL data server with one Elasticsearch and one Apache Fuseki 
   An example to get a dataset:  
   `curl -XGET http://localhost:9200/opal/dataset/test123`  
   An example to count datasets:  
-  `curl -XGET http://localhost:9200/catalog/dataset/_count`
+  `curl -XGET http://localhost:9200/opal/dataset/_count`
 
 ## Notes 
 
