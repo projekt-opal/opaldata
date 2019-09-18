@@ -10,13 +10,6 @@ version: '3.2'
 
 services:
 
-  opal-fuseki-data:
-    image: "busybox"
-    volumes:
-      - type: volume
-        source: fuseki-data
-        target: /data
-
   opal-fuseki:
     environment:
       - ADMIN_PASSWORD=${FUSEKI_ADMIN_PASSWORD}
