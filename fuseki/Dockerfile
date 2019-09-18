@@ -8,4 +8,4 @@
 # Check the latest available Fuseki version:
 #  https://jena.apache.org/download/
 
-FROM stain/jena-fuseki
+FROM stain/jena-fuseki:3.10.0
