@@ -1,0 +1,32 @@
+# state: kibana does not find elasticsearch on 9200 and 9300
+
+version: '2'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.3.2
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - discovery.type=single-node
+    networks:
+      - frontend
+  elasticsearch-mapping-init:
+    build: ./
+    links:
+      - elasticsearch
+    depends_on:
+      - elasticsearch
+    networks:
+      - frontend
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.3.2
+    environment:
+      ELASTICSEARCH_HOSTS: http://127.0.0.1:9300
+    networks:
+      - frontend
+
+networks:
+  frontend:
