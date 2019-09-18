@@ -3,19 +3,23 @@
 # Repository:
 # https://github.com/projekt-opal/opaldata
 
-version: '2'
+version: '3.2'
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.3.2
     ports:
-      - "9200:9200"
-      - "9300:9300"
+      - 9200:9200
     environment:
       - ES_JAVA_OPTS=${ELASTICSEARCH_JAVA_OPTS}
       - discovery.type=single-node
+    volumes:
+      - esdata01:/usr/share/elasticsearch/data
   elasticsearch-mapping-init:
     build: ./
     links:
       - elasticsearch
     depends_on:
       - elasticsearch
+
+volumes:
+  esdata01:
