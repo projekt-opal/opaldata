@@ -2,12 +2,12 @@
 
 Setup file(s) for OPAL data server with one Elasticsearch and one Apache Fuseki instance.
 
-Some documentation is in the GitHub wiki: https://github.com/projekt-opal/opaldata/wiki
+## Configuration and Start
 
-## Start
-
-- Edit the `.env` file
-- The vm.max_map_count setting should be set permanently (at least 262144) in /etc/sysctl.conf
+- On your machine, set max_map_count=262144 (source: [Elasticsearch guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html#docker-cli-run-prod-mode))
+- Download or clone the GitHub repository [opaldata](https://github.com/projekt-opal/opaldata)
+- Edit the configuration file  `.env`
+- Install [Docker Compose](https://docs.docker.com/compose/install/)
 - Run `docker-compose up -d`
 
 ## Access
@@ -16,3 +16,7 @@ Some documentation is in the GitHub wiki: https://github.com/projekt-opal/opalda
   URL: `http://localhost:3030/`  
   Username: `admin`  
   Password: `mypassword123` (or as set in .env file)
+
+## Notes 
+
+* Some documentation is in the GitHub wiki: https://github.com/projekt-opal/opaldata/wiki
