@@ -7,6 +7,7 @@ Some documentation is in the GitHub wiki: https://github.com/projekt-opal/opalda
 ## Start
 
 - Edit the `.env` file
+- The vm.max_map_count setting should be set permanently (at least 262144) in /etc/sysctl.conf
 - Run `docker-compose up -d`
 
 ## Access
