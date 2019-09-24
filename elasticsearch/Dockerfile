@@ -1,10 +1,7 @@
-FROM ubuntu
+# OPAL data Elasticsearch
+# 
+# Repository:
+# https://github.com/projekt-opal/opaldata
 
-# Install packages
-RUN apt-get update && \
-apt-get install -y curl
-COPY ./run.sh /
-RUN chmod +x /run.sh
-COPY mappings.json /
-
-ENTRYPOINT ["sh", "/run.sh"]
+# TODO: For using 7.3.2 set include_type_name to true
+FROM docker.elastic.co/elasticsearch/elasticsearch:5.4.3

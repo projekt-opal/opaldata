@@ -26,12 +26,14 @@ Setup file(s) for OPAL data server with one Elasticsearch and one Apache Fuseki 
   Username: `admin`  
   Password: As set in .env file or randomly created.
 - **Elasticsearch**  
+  An example URL to list the available indexes:  
+  http://localhost:9200/_cat/indices?v  
+  An example to count datasets:  
+  `curl -XGET http://localhost:9200/opal/dataset/_count`  
   An example to add a dataset:  
   `curl -H "Content-Type: application/json" -XPOST "http://localhost:9200/opal/dataset/test123" -d "{ \"title\" : \"Hello World\"}"`  
   An example to get a dataset:  
   `curl -XGET http://localhost:9200/opal/dataset/test123`  
-  An example to count datasets:  
-  `curl -XGET http://localhost:9200/opal/dataset/_count`
 
 ## Notes 
 

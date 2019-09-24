@@ -6,7 +6,7 @@
 version: '3.2'
 services:
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.3.2
+    build: ./
     ports:
       - 9200:9200
     environment:
@@ -14,8 +14,9 @@ services:
       - discovery.type=single-node
     volumes:
       - esdata01:/usr/share/elasticsearch/data
-  elasticsearch-mapping-init:
-    build: ./
+
+  elasticsearch-initialization:
+    build: ../elasticsearch-initialization/
     links:
       - elasticsearch
     depends_on:
