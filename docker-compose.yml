@@ -19,6 +19,7 @@ services:
       - discovery.type=single-node
     volumes:
       - esdata01:/usr/share/elasticsearch/data
+      - eslog:/var/log/elasticsearch/
 
   elasticsearch-initialization:
     build: elasticsearch-initialization
@@ -45,3 +46,4 @@ services:
 volumes:
   fuseki-data:
   esdata01:
+  eslog:
