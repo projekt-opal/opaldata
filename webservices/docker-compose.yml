@@ -3,4 +3,14 @@
 # Repository:
 # https://github.com/projekt-opal/opaldata
 
+version: '3.2'
 
+services:
+  opal-webservices:
+    environment:
+      - OPAL_TRIPLESTORE_URL=${OPAL_TRIPLESTORE_URL}
+      - OPAL_TRIPLESTORE_USERNAME=${OPAL_TRIPLESTORE_USERNAME}
+      - OPAL_TRIPLESTORE_PASSWORD=${OPAL_TRIPLESTORE_PASSWORD}
+    ports:
+      - 8081:8081
+    build: .
