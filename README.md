@@ -16,7 +16,7 @@ Setup file(s) for OPAL data server with one Elasticsearch and one Apache Fuseki 
       Default value: `-Xmx16g`
     - `ELASTICSEARCH_JAVA_OPTS`  
       Java memory configuration for Elasticsearch.  
-      Default value: `-Xms512m -Xmx16g`
+      Default value: `-Xms8g -Xmx8g`
 - Run `docker-compose up -d`
 
 ## Access
