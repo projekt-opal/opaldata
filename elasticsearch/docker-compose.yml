@@ -2,6 +2,9 @@
 # 
 # Repository:
 # https://github.com/projekt-opal/opaldata
+#
+# memory_lock ; ulimits: memlock: soft: -1 ; hard: -1
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docker.html
 
 version: '3.2'
 services:
@@ -12,6 +15,11 @@ services:
     environment:
       - ES_JAVA_OPTS=${ELASTICSEARCH_JAVA_OPTS}
       - discovery.type=single-node
+      - bootstrap.memory_lock=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
     volumes:
       - esdata01:/usr/share/elasticsearch/data
 
