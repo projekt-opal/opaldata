@@ -6,6 +6,9 @@
       "description":{
          "type":"text"
       },
+      "URL":{
+         "type":"keyword"
+      },
       "landingPage":{
          "type":"keyword"
       },
