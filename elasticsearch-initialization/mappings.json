@@ -15,6 +15,9 @@
       "language":{
          "type":"keyword"
       },
+      "theme":{
+         "type":"keyword"
+      },
       "keywords":{
          "type":"nested",
          "properties":{
