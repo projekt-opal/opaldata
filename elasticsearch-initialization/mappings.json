@@ -10,10 +10,13 @@
          "type":"keyword"
       },
       "landingPage":{
-         "type":"keyword"
+         "type":"text"
       },
       "language":{
          "type":"keyword"
+      },
+      "license":{
+         "type":"text"
       },
       "keywords":{
          "type":"nested",
@@ -26,8 +29,14 @@
       "themes":{
          "type":"nested",
          "properties":{
-            "theme":{
+            "type":{
                "type":"keyword"
+            },
+            "theme":{
+               "type":"text"
+            },
+            "prefLabel":{
+               "type":"text"
             }
          }
       },
@@ -121,7 +130,7 @@
                "type":"text"
             },
             "license":{
-               "type":"keyword"
+               "type":"text"
             },
             "accessURL":{
                "type":"keyword"
