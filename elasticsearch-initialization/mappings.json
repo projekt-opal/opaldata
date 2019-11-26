@@ -16,13 +16,15 @@
          "type":"keyword"
       },
       "license":{
-         "type":"text"
+         "type":"text",
+         "fielddata": true
       },
       "keywords":{
          "type":"nested",
          "properties":{
             "keyword":{
-               "type":"text"
+               "type":"text",
+               "fielddata": true
             }
          }
       },
@@ -33,10 +35,12 @@
                "type":"keyword"
             },
             "theme":{
-               "type":"text"
+               "type":"text",
+               "fielddata": true
             },
             "prefLabel":{
-               "type":"text"
+               "type":"text",
+               "fielddata": true
             }
          }
       },
@@ -45,6 +49,15 @@
       },
       "modified":{
          "type":"text"
+      },
+      "modifiedYear":{
+         "type":"keyword"
+      },
+      "modifiedMonth":{
+         "type":"keyword"
+      },
+      "metadataQuality":{
+         "type":"keyword"
       },
       "hasQualityMeasurements":{
          "type":"nested",
@@ -130,7 +143,8 @@
                "type":"text"
             },
             "license":{
-               "type":"text"
+               "type":"text",
+               "fielddata": true
             },
             "accessURL":{
                "type":"keyword"
@@ -139,10 +153,12 @@
                "type":"keyword"
             },
             "format":{
-               "type":"text"
+               "type":"text",
+               "fielddata": true
             },
             "mediaType":{
-               "type":"text"
+               "type":"text",
+               "fielddata": true
             },
             "byteSize":{
                "type":"text"
