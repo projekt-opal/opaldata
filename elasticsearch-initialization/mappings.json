@@ -16,13 +16,23 @@
          "type":"keyword"
       },
       "license":{
-         "type":"text"
+         "type":"text",
+        "fields": {
+          "raw": { 
+            "type":  "keyword"
+          }
+        }
       },
       "keywords":{
          "type":"nested",
          "properties":{
             "keyword":{
-               "type":"text"
+               "type":"text",
+		"fields": {
+		  "raw": { 
+		    "type":  "keyword"
+		  }
+		}
             }
          }
       },
@@ -33,10 +43,20 @@
                "type":"keyword"
             },
             "theme":{
-               "type":"text"
+               "type":"text",
+		"fields": {
+		  "raw": { 
+		    "type":  "keyword"
+		  }
+		}
             },
             "prefLabel":{
-               "type":"text"
+               "type":"text",
+		"fields": {
+		  "raw": { 
+		    "type":  "keyword"
+		  }
+		}
             }
          }
       },
@@ -45,6 +65,15 @@
       },
       "modified":{
          "type":"text"
+      },
+      "modifiedYear":{
+         "type":"keyword"
+      },
+      "modifiedMonth":{
+         "type":"keyword"
+      },
+      "metadataQuality":{
+         "type":"keyword"
       },
       "hasQualityMeasurements":{
          "type":"nested",
@@ -63,14 +92,24 @@
             }
          }
       },
-      "pulisherInfo":{
+      "publisherInfo":{
          "type":"nested",
          "properties":{
             "name":{
-               "type":"text"
+               "type":"text",
+		"fields": {
+		  "raw": { 
+		    "type":  "keyword"
+		  }
+		}
             },
             "publisher":{
-               "type":"keyword"
+               "type":"keyword",
+		"fields": {
+		  "raw": { 
+		    "type":  "keyword"
+		  }
+		}
             },
             "type":{
                "type":"keyword"
@@ -130,7 +169,12 @@
                "type":"text"
             },
             "license":{
-               "type":"text"
+               "type":"text",
+		"fields": {
+		  "raw": { 
+		    "type":  "keyword"
+		  }
+		}
             },
             "accessURL":{
                "type":"keyword"
@@ -139,10 +183,20 @@
                "type":"keyword"
             },
             "format":{
-               "type":"text"
+               "type":"text",
+		"fields": {
+		  "raw": { 
+		    "type":  "keyword"
+		  }
+		}
             },
             "mediaType":{
-               "type":"text"
+               "type":"text",
+		"fields": {
+		  "raw": { 
+		    "type":  "keyword"
+		  }
+		}
             },
             "byteSize":{
                "type":"text"
