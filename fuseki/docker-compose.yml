@@ -19,7 +19,7 @@ services:
     build:
       ./
     volumes:
-      - fuseki-data
+      - fuseki-data:/fuseki
 
 volumes:
   fuseki-data:
