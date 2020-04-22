@@ -18,7 +18,7 @@ Setup file(s) for OPAL data server with one Elasticsearch and one Apache Fuseki 
       Java memory configuration for Elasticsearch.  
       Default value: `-Xms8g -Xmx8g`
 - Run `docker-compose up -d`
-- The folder `webservices` contains an additional (temporary) configuration. The file `.env` has to be edited, too.
+- The folder `webservice` contains an additional configuration, which is not fully integrated now. The file `.env` has to be edited, too.
 
 ## Access
 
