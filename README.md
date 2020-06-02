@@ -24,7 +24,7 @@ This component is used by the [OPAL converter](https://github.com/projekt-opal/c
 ## Access
 
 - **Fuseki**  
-  URL: `http://localhost:3030/`  
+  URL: [http://localhost:3030/](http://localhost:3030/)  
   Username: `admin`  
   Password: As set in .env file or randomly created.
 - **Elasticsearch**  
