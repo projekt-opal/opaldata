@@ -1,6 +1,7 @@
 # OPAL data
 
-Setup file(s) for OPAL data server with one Elasticsearch and one Apache Fuseki instance.
+Setup file(s) for OPAL data server with one Elasticsearch and one Apache Fuseki instance.  
+This component is used by the [OPAL converter](https://github.com/projekt-opal/converter) to store data and by [OPAL web-service](https://github.com/projekt-opal/web-service) to read data.
 
 ## Configuration and start
 
@@ -18,7 +19,7 @@ Setup file(s) for OPAL data server with one Elasticsearch and one Apache Fuseki 
       Java memory configuration for Elasticsearch.  
       Default value: `-Xms8g -Xmx8g`
 - Run `docker-compose up -d`
-- The folder `webservice` contains an additional configuration, which is not fully integrated now. The file `.env` has to be edited, too.
+
 
 ## Access
 
