@@ -11,13 +11,16 @@ This component is used by the [OPAL converter](https://github.com/projekt-opal/c
 - Edit the configuration file  `.env`.  
   Settings:
     - `FUSEKI_ADMIN_PASSWORD`  
-      Fuseki admin password for the frontend. If not set, a random password will be created.
+      Fuseki admin password for the frontend. If not set, a random password will be created.  
+      Testing value: `psw`
     - `FUSEKI_JVM_ARGS`  
       Java configuration for Fuseki, e.g. the maximum heap size (Xmx).  
-      Default value: `-Xmx16g`
+      Default value: `-Xmx16g`  
+      Testing value: `-Xmx2g`  
     - `ELASTICSEARCH_JAVA_OPTS`  
       Java memory configuration for Elasticsearch.  
-      Default value: `-Xms8g -Xmx8g`
+      Default value: `-Xms8g -Xmx8g`  
+      Testing value: `-Xms2g -Xmx2g`  
 - Run `docker-compose up -d`
 
 
