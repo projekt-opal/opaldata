@@ -12,7 +12,7 @@ This component is used by the [OPAL converter](https://github.com/projekt-opal/c
   Settings:
     - `FUSEKI_ADMIN_PASSWORD`  
       Fuseki admin password for the frontend. If not set, a random password will be created.  
-      Testing value: `psw`
+      Testing value: `opaldata-psw`
     - `FUSEKI_JVM_ARGS`  
       Java configuration for Fuseki, e.g. the maximum heap size (Xmx).  
       Default value: `-Xmx16g`  
