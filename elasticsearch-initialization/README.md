@@ -1,6 +1,14 @@
-# OPAL data: elasticsearch-initialization
+# OPAL data: Elasticsearch initialization
 
 The data in this directory is used to configure a running Elasticsearch instance.
+
+The follwing files are used for the configuration by docker-compose in other directories:
+
+- Dockerfile
+- run-vm.sh
+- mappings.json
+
+For local development, you can use the following scripts:
 
 - **create-index.sh**: Creates the Elasticsearch index *opal* and related settings.
 - **create-mappings.sh**: Creates the mappings (data structure) using **mappings.json**.

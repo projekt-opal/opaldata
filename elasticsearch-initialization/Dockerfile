@@ -10,8 +10,8 @@ RUN apt-get update && \
 apt-get install -y curl
 
 # Copy data
-COPY ./run.sh /
-RUN chmod +x /run.sh
+COPY ./run-vm.sh /
+RUN chmod +x /run-vm.sh
 COPY mappings.json /
 
-ENTRYPOINT ["sh", "/run.sh"]
+ENTRYPOINT ["sh", "/run-vm.sh"]
