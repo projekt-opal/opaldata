@@ -1,10 +1,10 @@
 # OPAL data Elasticsearch
 # 
 # Repository:
-# https://github.com/projekt-opal/opaldata
+# https://github.com/projekt-opal/opaldata/tree/master/elasticsearch
 #
 # memory_lock ; ulimits: memlock: soft: -1 ; hard: -1
-# https://www.elastic.co/guide/en/elasticsearch/reference/5.4/docker.html
+# https://www.elastic.co/guide/en/elasticsearch/reference/7.3/docker.html
 
 version: '3.2'
 services:
