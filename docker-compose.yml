@@ -1,5 +1,11 @@
 # OPAL data
 #
+# This file is a combination of the docker-compose files in the sub-directories
+# elasticsearch (using elasticsearch-initialization) and fuseki.
+# 
+# Repository:
+# https://github.com/projekt-opal/opaldata
+#
 # Configurations are described in the subfolders.
 
 version: '3.2'
