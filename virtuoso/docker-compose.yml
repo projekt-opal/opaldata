@@ -1,0 +1,21 @@
+# OPAL data Virtuoso
+# 
+# Repository:
+# https://github.com/projekt-opal/opaldata
+
+version: '3.2'
+
+services:
+
+  opal-virtuoso:
+    environment:
+      - DBA_PASSWORD=${VIRTUOSO_ADMIN_PASSWORD}
+    ports:
+      - 8890:8890
+    build:
+      ./
+    volumes:
+      - virtuoso:/database
+
+volumes:
+  virtuoso:
