@@ -1,0 +1,10 @@
+# Creation of tdb.tar.gz
+sudo docker run -d --name tmp-fuseki -p 3333:3030 -e FUSEKI_DATASET_1=dataset stain/jena-fuseki:3.14.0
+sudo docker exec -ti tmp-fuseki bash
+cd /fuseki/databases/dataset/
+rm tdb.lock
+tar -czf tdb.tar.gz *
+exit
+sudo docker cp tmp-fuseki:/fuseki/databases/dataset/tdb.tar.gz ./
+sudo docker stop tmp-fuseki
+sudo docker rm tmp-fuseki
