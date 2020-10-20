@@ -4,6 +4,9 @@
             "originalURLs": {
                 "type": "keyword"
             },
+            "catalog": {
+                "type": "keyword"
+            },
             "themes": {
                 "type": "keyword"
             },
