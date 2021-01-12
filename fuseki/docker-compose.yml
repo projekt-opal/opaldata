@@ -17,8 +17,9 @@ services:
     environment:
       - ADMIN_PASSWORD=${FUSEKI_ADMIN_PASSWORD}
       - JVM_ARGS=${FUSEKI_JVM_ARGS}
-      - FUSEKI_DATASET_1=opal-2020-04
-      - FUSEKI_DATASET_2=opal-2020-07
+# Deactived as disturbs import process
+#      - FUSEKI_DATASET_1=opal-2020-06
+#      - FUSEKI_DATASET_2=opal-2020-10
     ports:
       - 3030:3030
     build:
