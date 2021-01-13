@@ -46,24 +46,38 @@ apt-get update -y && \
 apt-get install -y wget axel && \
 apt-get install -y --no-install-recommends procps
 
+
 # Download data
 RUN \
 mkdir /tmp/opal-2020-10 && \
 cd /tmp/opal-2020-10 && \
 axel https://hobbitdata.informatik.uni-leipzig.de/OPAL/OpalGraph/2020-11-18/2020-10/mdm-1.ttl.tar.gz && \
 axel https://hobbitdata.informatik.uni-leipzig.de/OPAL/OpalGraph/2020-11-18/2020-10/mcloud-1.ttl.tar.gz && \
+axel https://hobbitdata.informatik.uni-leipzig.de/OPAL/OpalGraph/2020-11-18/2020-10/govdata.tar.gz && \
+axel https://hobbitdata.informatik.uni-leipzig.de/OPAL/OpalGraph/2020-11-18/2020-10/edp.tar.gz && \
 tar -xzf mdm-1.ttl.tar.gz -C ./ && \
-tar -xzf mcloud-1.ttl.tar.gz -C ./ 
+tar -xzf mcloud-1.ttl.tar.gz -C ./ && \
+tar -xzf govdata.tar.gz -C ./ && \
+tar -xzf edp.tar.gz -C ./ 
 RUN \
 mkdir /tmp/opal-2020-06 && \
 cd /tmp/opal-2020-06 && \
 axel https://hobbitdata.informatik.uni-leipzig.de/OPAL/OpalGraph/2020-10-22/2020-06/mdm-1.ttl.tar.gz && \
 axel https://hobbitdata.informatik.uni-leipzig.de/OPAL/OpalGraph/2020-10-22/2020-06/mcloud-1.ttl.tar.gz && \
+axel https://hobbitdata.informatik.uni-leipzig.de/OPAL/OpalGraph/2020-10-22/2020-06/govdata.tar.gz && \
+axel https://hobbitdata.informatik.uni-leipzig.de/OPAL/OpalGraph/2020-10-22/2020-06/edp.tar.gz && \
 tar -xzf mdm-1.ttl.tar.gz -C ./ && \
-tar -xzf mcloud-1.ttl.tar.gz -C ./ 
+tar -xzf mcloud-1.ttl.tar.gz -C ./ && \
+tar -xzf govdata.tar.gz -C ./ && \
+tar -xzf edp.tar.gz -C ./
+
 
 # Copy import script
 
 COPY import.sh /jena-fuseki/
 RUN chmod 755 /jena-fuseki/import.sh
 
+
+# Edit config (becomes /fuseki/shiro.ini)
+
+RUN sed -i 's/.*\/$\/\*\*/#&/' /jena-fuseki/shiro.ini
