@@ -1,7 +1,9 @@
 # OPAL data
 
 Setup for the OPAL data server with Elasticsearch and Apache Fuseki.  
-This component is used by [OPAL converter](https://github.com/projekt-opal/converter) and [OPAL batch](https://github.com/projekt-opal/batch) to store data and by [OPAL web-service](https://github.com/projekt-opal/web-service) to read data.
+This component is used by [OPAL converter](https://github.com/projekt-opal/converter) and [OPAL batch](https://github.com/projekt-opal/batch) to store data and by [OPAL web-service](https://github.com/projekt-opal/web-service) to read data for the demo.
+
+![](doc/repositories.png)
 
 
 
@@ -24,8 +26,8 @@ This component is used by [OPAL converter](https://github.com/projekt-opal/conve
       Testing value: `-Xms2g -Xmx2g`  
 - Run `sudo docker-compose up --build -d`
 - After the visible execution stopped, *opaldata_elasticsearch-initialization* will run for around 20 seconds. Its status will change from *Up* to *Exited*. You can check it by `sudo docker ps -a`.
-
-
+- To import the final OPAL data, run `sudo docker exec --interactive --tty fuseki_opal-fuseki_1 /jena-fuseki/import.sh`. It takes around 25 minutes.
+Afterwards go to http://localhost:3030/manage.html, use the link 'add new dataset' and choose 'Persistent – dataset will persist across Fuseki restarts'. Create two databases: opal-2020-10 and opal-2020-06.
 
 ## Access
 

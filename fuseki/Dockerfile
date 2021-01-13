@@ -20,7 +20,6 @@
 #  docker run --name fuseki-data -v /fuseki busybox
 #
 # Useful commands
-#  sudo docker exec --interactive --tty fuseki_opal-fuseki_1 /bin/bash
 #  sudo docker-compose up --build -d
 #  sudo docker exec --interactive --tty fuseki_opal-fuseki_1 /bin/bash
 #
