@@ -5,9 +5,6 @@
 #
 # Based on:
 # https://hub.docker.com/r/stain/jena-fuseki
-#
-# Databases require prefix 'FUSEKI_DATASET_'
-# https://github.com/stain/jena-docker/issues/33
 
 version: '3.2'
 
@@ -17,9 +14,6 @@ services:
     environment:
       - ADMIN_PASSWORD=${FUSEKI_ADMIN_PASSWORD}
       - JVM_ARGS=${FUSEKI_JVM_ARGS}
-# Deactived as disturbs import process
-#      - FUSEKI_DATASET_1=opal-2020-06
-#      - FUSEKI_DATASET_2=opal-2020-10
     ports:
       - 3030:3030
     build:
